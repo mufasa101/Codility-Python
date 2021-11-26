@@ -2,6 +2,23 @@
 # print("this is a debug message")
 
 def solution(N):
+    nums=bin(N)[2:]
+    # nums='1a000101'
+    current_value=0
+    max_value=0
+    for i in nums:
+        if int(i) ==0:
+            current_value+=1
+        if int(i)==1:
+            max_value=max(max_value,current_value)
+            current_value=0
+    return max_value
+        
+print(solution(5))
+
+
+
+def solution(N):
     # write your code in Python 3.6
     # using the "concept of bit manipulation" and "& operation"
     
