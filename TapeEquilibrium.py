@@ -1,6 +1,22 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
+
+def solution(A):
+    chop_1=A[0]
+    chop_2=sum(A[1:])
+    min_diff=abs(chop_1-chop_2)
+    for i in range(1,len (A)-1):
+        chop_1+=A[i]
+        chop_2-=A[i]
+        if abs(chop_1-chop_2) < min_diff:
+            min_diff=abs(chop_1-chop_2)
+    return min_diff
+        
+        
+
+
+
 import sys
 
 def solution(A):
