@@ -1,6 +1,17 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
+def solution(elements):
+    elements.sort()
+    elements.append(-1)
+    for i in range(0, len(elements),2):
+        if elememts[i]!=elements[i+1]:
+            return elememts[i]
+
+
+
+    
+
 def solution(A):
     # write your code in Python 3.6
     
