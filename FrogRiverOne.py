@@ -1,6 +1,21 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
+
+def solution(x, arr):
+    # creating the steps the frog should make
+    steps = set([i for i in range(1, x + 1)])
+    # creating the steps the frog already did
+    froggy_steps = set()
+
+    for index, leaf in enumerate(arr):
+        if leaf <= x:
+            froggy_steps.add(leaf)
+        if froggy_steps == steps:
+            return index
+    return -1
+
+
 def solution(X, A):
     # write your code in Python 3.6
     
