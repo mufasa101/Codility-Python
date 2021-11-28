@@ -1,3 +1,23 @@
+def solution(N,arr):
+    array_v=[0]*N
+    max_v=0
+    curr_v=0
+    for index,value in enumerate(arr):
+      
+        if value <=N:
+            array_v[value-1]=max(curr_v,array_v[value-1])+1
+            max_v=max(array_v[value-1],max_v)
+            print("index:",index,"value:",value,"array value:", array_v[value-1])
+        else:
+            curr_v=max_v
+   
+    for i in range(len(array_v)):
+        # print("Before:",array_v[i])
+        array_v[i]=max(array_v[i],curr_v)
+        # print("After:",array_v[i])
+        
+    return array_v    
+
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
