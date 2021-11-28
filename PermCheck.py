@@ -1,3 +1,14 @@
+def solution(arr):
+    if len(arr)<0:
+        return 0
+    arr.sort()
+    i=0
+    for item in range(1,len(arr)+1):
+        if item!=arr[i]:
+            return 0
+        i+=1
+    return 1
+
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
