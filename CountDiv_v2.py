@@ -1,6 +1,18 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
+def solution(start, end, nos):
+    # write your code in Python 3.6
+    formu=int(end/nos)-int(start/nos)
+    if start % nos==0:
+        formu+=1
+    return formu
+
+
+
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
 def solution(A, B, K):
     # write your code in Python 3.6
     
