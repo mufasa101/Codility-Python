@@ -1,3 +1,22 @@
+def solution(A):
+    min_index=0
+    min_value=max(A)*2
+
+    for i in range(0,len(A)-2):
+        sample1=(A[i]+A[i+1]+A[i+2])/3
+        sample2=(A[i]+A[i+1])/2
+        # final_sample=min(sample1,sample2)
+        if min_value > sample1 or min_value>sample2:
+            min_value=min(sample1,sample2)
+            min_index=i
+            # print("sample1:",A[i],A[i+1],A[i+2])
+            # print("sample2:",A[i],A[i+1])
+    sample_final=(A[-2]+A[-1])/2
+    if min_value > sample_final:
+        return len(A)-2
+        # print("sample3:",A[-2],A[-1])
+    return min_index
+
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
