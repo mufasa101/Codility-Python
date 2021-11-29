@@ -1,3 +1,46 @@
+def solution(S, P, Q):
+    # write your code in Python 3.6
+    #create the diffrent sequnces with 0 at lenghth of S
+    #create counters for each
+    #loop through s and edit each where they occure, use a to test
+    #use range
+    #change the letter at occurece
+    #Loop through again
+    #check if p[i]<q[i] or if s[p[i]]==A
+    result_dict=[]
+    A=[0]*len(S)
+    C=[0]*len(S)
+    G=[0]*len(S)
+    T=[0]*len(S)
+    a=c=g=t=0
+    for i in range(len(S)):
+     
+        if S[i]=="A":
+            a+=1
+        elif S[i]=="C":
+            c+=1
+        elif S[i]=="G":
+            g+=1
+        elif S[i]=="T":
+            t+=1
+        A[i]=a
+        C[i]=c
+        G[i]=g
+        T[i]=t
+    # return C,G,T
+    for i in range(len(P)):
+        # print(A[P[i]],A[Q[i]])
+        if A[P[i]]<A[Q[i]] or S[P[i]]=="A":
+            result_dict.append(1)
+        elif C[P[i]]<C[Q[i]] or S[P[i]]=="C":
+            result_dict.append(2)
+        elif G[P[i]]<G[Q[i]] or S[P[i]]=="G":
+            result_dict.append(3)
+        elif T[P[i]]<T[Q[i]] or S[P[i]]=="T":
+            result_dict.append(4)
+    return result_dict
+
+
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
