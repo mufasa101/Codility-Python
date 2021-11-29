@@ -1,3 +1,12 @@
+def solution(A):
+    cars_east=0
+    cars_sum=0
+    for i in A:
+        if i ==0:
+            cars_east+=1
+        if i==1:
+            cars_sum+=cars_east
+    return cars_sum
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
