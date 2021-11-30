@@ -1,3 +1,31 @@
+def solution(arr):
+
+    if len(arr)<1:
+        return 0
+    min_data=arr[0]
+    max_profit=0
+    sum_cum=0
+    for i in range(1,len(arr)):
+        if arr[i] <  min_data:
+            min_data=arr[i]
+            # print("new_lessssssssssss",min_data)
+            sum_cum=0
+        else:
+            profit_made=(arr[i]-arr[i-1])
+            
+            print("profit",profit_made)
+            sum_cum+=profit_made
+            if max_profit < sum_cum:
+                max_profit=sum_cum
+            print("new cumm:",sum_cum)
+            print("max_profit:",max_profit)
+
+        # if arr[i] >max_data:
+        #     max_data=arr[i]
+    # print("max=",max_data,"min=",min_data)
+    return max_profit
+
+
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
